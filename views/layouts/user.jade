@@ -1,0 +1,13 @@
+li
+    a(href='/profile')
+      i.fa.fa-user.fa-fw
+      |  User Profile
+li
+    a(href='/settings')
+      i.fa.fa-gear.fa-fw
+      |  Settings
+li.divider
+li
+    a(href='./login', onclick="document.cookie = 'authJwt' + '=; Max-Age=0';")
+      i.fa.fa-sign-out.fa-fw
+      |  Logout

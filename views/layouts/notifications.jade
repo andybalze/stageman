@@ -1,0 +1,24 @@
+li.dropdown
+    a.dropdown-toggle(data-toggle='dropdown', href='#')
+      i.fa.fa-envelope.fa-fw
+      i.fa.fa-caret-down
+    ul.dropdown-menu.dropdown-messages
+      include ./messages
+  li.dropdown
+    a.dropdown-toggle(data-toggle='dropdown', href='#')
+      i.fa.fa-tasks.fa-fw
+      i.fa.fa-caret-down
+    ul.dropdown-menu.dropdown-tasks
+      include ./tasks
+  li.dropdown
+    a.dropdown-toggle(data-toggle='dropdown', href='#')
+      i.fa.fa-bell.fa-fw
+      i.fa.fa-caret-down
+    ul.dropdown-menu.dropdown-alerts
+      include ./alerts
+  li.dropdown
+    a.dropdown-toggle(data-toggle='dropdown', href='#')
+      i.fa.fa-user.fa-fw
+      i.fa.fa-caret-down
+    ul.dropdown-menu.dropdown-user
+      include ./user

@@ -1,0 +1,27 @@
+doctype html
+html(lang='en')
+  head
+    include ./head
+  body
+    #wrapper
+      // Navigation
+      nav.navbar.navbar-default.navbar-static-top(role='navigation', style='margin-bottom: 0')
+        .navbar-header
+          include ./header-left
+        ul.nav.navbar-top-links.navbar-right
+          include ./notifications
+        .navbar-default.sidebar(role='navigation')
+          .sidebar-nav.navbar-collapse
+            ul#side-menu.nav
+              include ./menu
+      #page-wrapper
+        .container-fluid
+          .row
+            .col-lg-12
+              | !{quotes}
+              h1.page-header
+                block title
+              block content
+          footer
+            include ./footer
+    include ./scripts

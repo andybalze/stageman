@@ -1,0 +1,47 @@
+{
+  "name": "stage-manager",
+  "projectTitle": "Stage Manager",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "mysql-ctl start && nodemon ./bin/www",
+    "stop": "mysql-ctl stop"
+  },
+  "dependencies": {
+    "async": "^2.1.4",
+    "body-parser": "~1.15.1",
+    "config": "^1.21.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "express": "~4.13.4",
+    "google-auth-library": "^0.9.8",
+    "googleapis": "^12.4.0",
+    "jade": "~1.11.0",
+    "jsonwebtoken": "^7.1.6",
+    "knex": "^0.11.9",
+    "morgan": "~1.7.0",
+    "random-js": "^1.0.8",
+    "request": "^2.75.0",
+    "serve-favicon": "~2.3.0",
+    "socket.io": "^1.7.2",
+    "tinymce": "^4.4.1",
+    "twitter-oauth": "0.0.6"
+  },
+  "description": "The ultimate stagemanger online application, to keep track of your theater.",
+  "main": "app.js",
+  "devDependencies": {},
+  "keywords": [
+    "stage",
+    "manager",
+    "theatre",
+    "theater",
+    "rehearsal",
+    "online",
+    "web",
+    "assistant",
+    "play",
+    "show"
+  ],
+  "author": "Weston Fausett",
+  "license": "ISC"
+}

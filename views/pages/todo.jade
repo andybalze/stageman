@@ -1,0 +1,33 @@
+extends ../layouts/layout
+block title
+    i.glyphicon.glyphicon-th-list.fa-fw
+    | To-Do List
+block style
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', media='(max-device-width: 640px)', href='todolist/css/style.css')
+    link(rel='stylesheet', media='(min-device-width: 640px)', href='todolist/css/desktop.css')
+block content
+    section#content
+      #taskMenu
+        ul#list
+          #taskToAdd
+            input#input(type='text', tabindex='2', anchor='list', placeholder='What needs to be done?', autofocus='')
+          foot#foot
+            #1.bottom.first(anchor='selections')
+              span#amountLeft(tabindex='9999')
+                | 0 Tasks Left
+            #2.bottom.middle
+              button#showAll.view(tabindex='9999')
+                | All
+              button#showActive.view(tabindex='9999')
+                | Active
+              button#showComplete.view(tabindex='9999')
+                | Complete
+            #3.bottom.last
+              button.clear(tabindex='9999', onclick='clear()')
+                | Clear Completed
+    button(onclick='print()').hidden-print.btn.btn-default.pull-right
+      i.glyphicon.glyphicon-print
+      |&nbsp;Print
+block scripts
+    script(type='text/javascript', src='./todolist/toDoList.js')

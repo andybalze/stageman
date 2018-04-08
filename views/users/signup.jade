@@ -1,0 +1,43 @@
+extends ./layout
+block pageTitle
+        title Create Account
+block style
+  link(rel='stylesheet' href='../css/meter.css')
+block Title
+  a.fa-chevron-left.fa(href="./login")
+  | Please Provide Information
+block content
+  form.form-1(role='form')
+    fieldset
+      .form-group
+        input.form-control#email(placeholder='E-mail', name='email', type='text')
+        p#result
+      .form-group
+        input.form-control(placeholder='Full Name', type='text', name='fullName')
+      .form-group
+        input.form-control(placeholder='Nickname (What you would like to be called)', type='text', name='nickName')
+      .form-group
+        select.form-control(name='status')
+          option(value='Artist') Artist
+          option(value='Gaurdian') Gaurdian
+          option(value='Manager') Manager
+          option(value='Designer') Designer
+          option(value='Director') Director
+      .form-group
+        input.form-control#username(placeholder='Username', name='username', type='text', autofocus='')
+        span(id="userTaken",class="userTaken", style="color:#ff6666;")
+      .form-group
+        input.form-control#password(placeholder='Password', name='password', type='password', value='', style='-webkit-text-security: square;')
+        meter#password-strength-meter(max="4")
+        p#password-strength-text
+      .form-group
+        input.form-control(placeholder='Re-enter Password', id='re-password', name='re-password', type='password', value='', style='-webkit-text-security: square;')
+        span(id="confirmMessage",class="confirmMessage", style="color:#ff6666;")
+      // Change this to a button or input when using this as a form
+      label.btn.btn-lg.btn-success.btn-block#button(for='button')
+        i.fa.fa-check
+        input(href='./index', type='submit', value='Create', name='button', style='background-color:transparent;border:0;cursor: inherit;')
+block scripts
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.2.0/zxcvbn.js")
+  script(src="../js/formVerify.js")
+  script(src='../js/createUsers.js')

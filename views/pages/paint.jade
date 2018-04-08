@@ -1,0 +1,11 @@
+extends ../layouts/layout
+block content
+    div#canvasDiv
+block scripts
+    //if IE
+      script(type='text/javascript', src='<script type=', text='')
+    script(src='../js/paint.js')
+    script(ype="text/javascript")
+        |$(document).ready(function() {
+        |	 prepareCanvas();
+        |});

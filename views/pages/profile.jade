@@ -1,0 +1,69 @@
+extends ../layouts/layout
+block title
+    i.fa.fa-user.fa-fw
+    | Profile
+block style
+    link(rel='stylesheet' href='../css/meter.css')
+    link(rel='stylesheet' href='../bower_components/jquery-ui/themes/base/jquery-ui.css')
+block content
+    .form-group
+        label(for="name") Full Name
+        input.form-control(id="name")
+    .form-group
+        label(for="email") E-mail
+        input.form-control(id="email")
+      .form-group
+        input.form-control#password(placeholder='Password', name='password', type='password', value='', style='-webkit-text-security: square;')
+        meter#password-strength-meter(max="4")
+        p#password-strength-text
+      .form-group
+        input.form-control(placeholder='Re-enter Password', id='re-password', name='re-password', type='password', value='', style='-webkit-text-security: square;')
+        span(id="confirmMessage",class="confirmMessage", style="color:#ff6666;")
+    .form-group
+        label(for="bio") Bio
+        textarea.form-control(id="bio")
+    .form-group
+        label(for="headshot") Headshot
+        input.btn.btn-default(type="file",name="headshot",id="headshot",size="40",accept="image/jpeg")
+    .form-group
+        label(for='grade') Grade
+        select.form-control(name='grade')
+          option(value='8') 8
+          option(value='9') 9
+          option(value='10') 10
+          option(value='11') 11
+          option(value='12') 12
+    .form-group
+        input.form-control(placeholder='Student ID # (e.g. 9682651)', name='studentId', type='text')
+    .form-group
+        p
+          label(for='amount') Vocal range:
+          input#amount(type='text', readonly='', size="35")
+        #slider-range
+    .form-group
+        input.form-control(placeholder='Nickname (What you would like to be called)', type='text', name='nickName')
+    h2 Notifications
+    .form-group
+        input(type="checkbox", id="receiveNotifs")
+        label(for="receiveNotifs") Receive Notifications
+    .form-group
+        button.btn.btn-default Log Out Of All Other Sessions
+        
+
+block scripts
+  script(src="../js/formVerify.js")
+  script(src='../js/vocalRange.js')
+  script(type='text/javascript').
+    $( function() {
+        $( "#slider-range" ).slider({
+          range: true,
+          min: 0,
+          max: Object.keys(vocalRange).length - 1,
+          values: [ 15, 25 ],
+          slide: function( event, ui ) {
+            $( "#amount" ).val( "" + vocalRange[ui.values[ 0 ]] + " - " + vocalRange[ui.values[ 1 ]] );
+          }
+        });
+        $( "#amount" ).val( "" + vocalRange[$( "#slider-range" ).slider( "values", 0 )] +
+          " - " + vocalRange[$( "#slider-range" ).slider( "values", 1 )] );
+      } );
