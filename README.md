@@ -20,5 +20,6 @@ create table users (
  status varchar(255)
  );
 ```
+Change the /package.json file "scripts"->"start" to whatever your server starting is. `sudo service mysql start` and `nodemon ./bin/www` is for debugging purposes. `node ./bin/www` would be normal.
 ### Start server
 Start Server `npm start`
